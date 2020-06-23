@@ -57,7 +57,7 @@ const matrizPersonage = [
 ];
 
 function preload() {
-  imageScenario = loadImage('images/scenario/floresta.png');
+  imageScenario = loadImage('images/scenario/background.png');
   imagePersonage = loadImage('images/personage/correndo.png');
   imageEnemy = loadImage('images/enemies/gotinha.png');
   soundGame = loadSound('sounds/trilha_jogo.mp3');
@@ -67,7 +67,7 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   scenario = new Scenario(imageScenario, 3);
-  personage = new Personage(matrizPersonage, imagePersonage, 0, 110, 135, 220, 270);
+  personage = new Personage(matrizPersonage, imagePersonage, 50, 110, 135, 220, 270);
   enemy = new Enemy(matrizEnemy, imageEnemy, width - 52, 52, 52, 104, 104);
   frameRate(40);
   soundGame.loop();
@@ -75,8 +75,8 @@ function setup() {
 
 function keyPressed(){
   if(key === 'ArrowUp'){
-    personage.jump();
-    soundJump.play();
+      personage.jump();
+      soundJump.play();
   }
 }
 
@@ -93,6 +93,7 @@ function draw() {
   if(personage.checkCollision(enemy)){
     console.log('colidiuuuuu');
     noLoop();
+    if(!alert('e morreu')){window.location.reload();}
   }
    
 }
