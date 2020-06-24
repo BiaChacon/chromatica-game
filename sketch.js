@@ -1,11 +1,18 @@
 let imageScenario;
 let imagePersonage;
 let imageEnemy;
+let imageEnemyBig;
+let imageEnemyFlying;
+let imageGameOver;
 let soundGame;
 let soundJump;
+
 let scenario;
 let personage
 let enemy;
+let enemyBig;
+let enemyFlying;
+let punctuation;
 
 const matrizEnemy = [
   [0, 0],
@@ -36,7 +43,8 @@ const matrizEnemy = [
   [104, 626],
   [208, 626],
   [312, 626],
-]
+];
+
 const matrizPersonage = [
       [0,0],
       [220,0],
@@ -56,10 +64,65 @@ const matrizPersonage = [
       [660,810]
 ];
 
+const matrizEnemyBig = [
+  [0,0],
+  [400,0],
+  [800,0],
+  [1200,0],
+  [1600,0],
+  [0,400],
+  [400,400],
+  [800,400],
+  [1200, 400],
+  [1600, 400],
+  [0,800],
+  [400, 800],
+  [800, 800],
+  [1200, 800],
+  [1600, 800],
+  [0, 1200],
+  [400, 1200],
+  [800, 1200],
+  [1200, 1200],
+  [1600, 1200], 
+  [0, 1600],
+  [400, 1600],
+  [800, 1600],
+  [1200, 1600],
+  [1600, 1600],
+  [0, 2000],
+  [400, 2000],
+  [800, 2000],
+];
+
+const matrizEnemyFlying = [
+  [0,0],
+  [200, 0],
+  [400, 0],
+  [0, 150],
+  [200, 150],
+  [400, 150],
+  [0, 300],
+  [200, 300],
+  [400, 300],
+  [0, 450],
+  [200, 450],
+  [400, 450],
+  [0, 600],
+  [200, 600],
+  [400, 600],
+  [0, 750],
+];
+
+const enemies = [];
+
 function preload() {
   imageScenario = loadImage('images/scenario/background.png');
+  imageGameOver = loadImage('images/assets/game-over.png');
   imagePersonage = loadImage('images/personage/correndo.png');
   imageEnemy = loadImage('images/enemies/gotinha.png');
+  imageEnemyBig = loadImage('images/enemies/troll.png');
+  imageEnemyFlying = loadImage('images/enemies/gotinha-voadora.png');
   soundGame = loadSound('sounds/trilha_jogo.mp3');
   soundJump = loadSound('sounds/somPulo.mp3');
 }
@@ -67,8 +130,17 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   scenario = new Scenario(imageScenario, 3);
-  personage = new Personage(matrizPersonage, imagePersonage, 50, 110, 135, 220, 270);
-  enemy = new Enemy(matrizEnemy, imageEnemy, width - 52, 52, 52, 104, 104);
+  punctuation = new Punctuation();
+  
+  personage = new Personage(matrizPersonage, imagePersonage, 0, 70, 110, 135, 220, 270);
+  const enemy = new Enemy(matrizEnemy, imageEnemy, width - 52, 70, 52, 52, 104, 104, 200);
+  const enemyFlying = new Enemy(matrizEnemyFlying, imageEnemyFlying, width - 52, 240, 100, 75, 200, 150, 10, 1500);
+  const enemyBig = new Enemy(matrizEnemyBig, imageEnemyBig, width, 40, 200, 200, 400, 400, 2500);
+  
+  enemies.push(enemy);
+  enemies.push(enemyFlying);
+  enemies.push(enemyBig);
+  
   frameRate(40);
   soundGame.loop();
 }
@@ -84,16 +156,21 @@ function draw() {
   scenario.show();
   scenario.move();
   
+  punctuation.show();
+  punctuation.addPoint();
+  
   personage.show();
   personage.applyGravity();
   
-  enemy.show();
-  enemy.move();
-  
-  if(personage.checkCollision(enemy)){
-    console.log('colidiuuuuu');
-    noLoop();
-    if(!alert('e morreu')){window.location.reload();}
-  }
+  enemies.forEach(enemy => {
+    enemy.show();
+    enemy.move();
+    
+    if(personage.checkCollision(enemy)){
+      noLoop();
+      image(imageGameOver, width/2 - 200, height/3);
+    }
+    
+  });
    
 }

@@ -1,11 +1,12 @@
 class Animation {
-   constructor(matriz, image, x, largura, altura, larguraSprite, alturaSpirit){
+   constructor(matriz, image, x, variationY, largura, altura, larguraSprite, alturaSpirit){
     this.matriz = matriz;
     this.image = image;
     this.largura = largura;
     this.altura = altura;
     this.x = x;
-    this.y = height - this.altura;
+    this.variationY = variationY;
+    this.y = height - this.altura - this.variationY;
     this.larguraSprite = larguraSprite;
     this.alturaSpirit = alturaSpirit; 
      
