@@ -132,7 +132,7 @@ function setup() {
   scenario = new Scenario(imageScenario, 3);
   punctuation = new Punctuation();
   
-  personage = new Personage(matrizPersonage, imagePersonage, 0, 70, 110, 135, 220, 270);
+  personage = new Personage(matrizPersonage, imagePersonage, 50, 70, 110, 135, 220, 270);
   const enemy = new Enemy(matrizEnemy, imageEnemy, width - 52, 70, 52, 52, 104, 104, 200);
   const enemyFlying = new Enemy(matrizEnemyFlying, imageEnemyFlying, width - 52, 240, 100, 75, 200, 150, 10, 1500);
   const enemyBig = new Enemy(matrizEnemyBig, imageEnemyBig, width, 40, 200, 200, 400, 400, 2500);
