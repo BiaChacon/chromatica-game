@@ -28,19 +28,9 @@ class Personage extends Animation {
   }
   
   checkCollision(enemy) {
-    const precision = .7;
-
-    // noFill();
-    // rect(this.x,
-    //   this.y,
-    //   this.largura,
-    //   this.altura);
-    // rect(enemy.x,
-    //   enemy.y,
-    //   enemy.largura,
-    //   enemy.altura);
     
-    const collision =  collideRectRect(
+    const precision = .7
+     const collision =  collideRectRect(
        this.x,
        this.y,
        this.largura * precision,
