@@ -12,15 +12,15 @@ canvas {
   font-family: 'Luckiest Guy', cursive;
   padding: 1rem 1.25rem;
   letter-spacing: .25rem;
-  box-shadow: 2px 2px 0px 1px #4a4c69;
+  box-shadow: 2px 2px 0px 1px #FF69B4;
   text-transform: uppercase;
-  background-color: #8286b5;
+  background-color:#FF1493;
   border: none;
   border-radius: .75rem;
   color: #fff;
 }
 
 .botton-home-screen:hover {
-  background-color: #ffc0c1;
-  box-shadow: 2px 2px 0px 1px #b58a8a;
+  background-color: #FF69B4;
+  box-shadow: 2px 2px 0px 1px #FF69B4;
 }

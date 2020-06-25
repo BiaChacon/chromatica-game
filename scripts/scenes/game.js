@@ -7,10 +7,10 @@ class Game {
     scenario = new Scenario(imageScenario, 3);
     punctuation = new Punctuation();
 
-    personage = new Personage(matrizPersonage, imagePersonage, 0, 30, 110, 135, 220, 270);
-    const enemy = new Enemy(matrizEnemy, imageEnemy, width - 52, 30, 52, 52, 104, 104, 10, 100);
-    const enemyFlying = new Enemy(matrizEnemyFlying, imageEnemyFlying, width - 52, 200, 100, 75, 200, 150, 10, 100);
-    const enemyBig = new Enemy(matrizEnemyBig, imageEnemyBig, width, 0, 200, 200, 400, 400, 10, 100);
+    personage = new Personage(matrizPersonage, imagePersonage, 50, 70, 110, 135, 220, 270);
+    const enemy = new Enemy(matrizEnemy, imageEnemy, width - 52, 70, 52, 52, 104, 104, 10, 100);
+    const enemyFlying = new Enemy(matrizEnemyFlying, imageEnemyFlying, width - 52, 240, 100, 75, 200, 150, 10, 100);
+    const enemyBig = new Enemy(matrizEnemyBig, imageEnemyBig, width, 30, 200, 200, 400, 400, 10, 100);
 
     enemies.push(enemy);
     enemies.push(enemyFlying);
@@ -50,7 +50,7 @@ class Game {
 
     if (personage.checkCollision(enemy)) {
       noLoop();
-      image(imageGameOver, width / 2 - 200, height / 3);
+      image(imageGameOver, width / 2 - 200, height / 3);  
     }
   }
   

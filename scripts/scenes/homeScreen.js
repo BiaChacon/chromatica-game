@@ -17,7 +17,7 @@ class HomeScreen {
     textFont(fontHomeScreen);
     textAlign(CENTER);
     textSize(50);
-    text('Adventures of', width/2, height/3);
+    text('Adventures of', width/2, height/2.5);
     textSize(150);
     text('Hipsta',  width/2, height/5*3);
   }

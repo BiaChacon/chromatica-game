@@ -18,4 +18,8 @@ class ButtonManager {
     sceneAtual = 'game';
   }
   
+  up(){
+    scenes[sceneAtual].draw();
+  }
+  
 }
