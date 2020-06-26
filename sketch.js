@@ -9,8 +9,7 @@ function setup() {
   
   scenes = {
     game,
-    homeScreen,
-    level2
+    homeScreen
   };
   
   buttonManager =  new ButtonManager('Start');
