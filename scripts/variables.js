@@ -1,16 +1,24 @@
-let imageScenario;
+let imageScenario1;
+let imageScenario2;
+let imageScenario3;
+
 let imagePersonage;
 let imageEnemy;
 let imageEnemyBig;
 let imageEnemyFlying;
 let imageGameOver;
 let imageHomeScreen;
+let imageLife;
 let fontHomeScreen;
 let soundGame;
 let soundJump;
+let soundOver;
+let fita;
+
 let game;
-
-
+let level1;
+let level2;
+let level3;
 let sceneAtual = 'homeScreen';
 let scenes;
 let homeScreen;
@@ -22,6 +30,7 @@ let enemy;
 let enemyBig;
 let enemyFlying;
 let punctuation;
+let life;
 
 const matrizEnemy = [
   [0, 0],
@@ -42,7 +51,7 @@ const matrizEnemy = [
   [312, 312],
   [0, 418],
   [104, 418],
-  [208, 418],
+  [208, 418], 
   [312, 418],
   [0, 522],
   [104, 522],

@@ -8,6 +8,7 @@ class Personage extends Animation {
     this.gravity = 3;
     this.alturaJump =  -30;
     this.jumps = 0;
+    this.invincible = false;
   }
   
   jump() {
@@ -27,10 +28,21 @@ class Personage extends Animation {
     }
   }
   
+  makeInvincible(){
+    this.invincible = true;
+    setTimeout(()=>{
+      this.invincible = false;
+    }, 1000);
+  
+  }
+  
   checkCollision(enemy) {
+    if(this.invincible){
+      return false;
+    }
     
     const precision = .7
-     const collision =  collideRectRect(
+    const collision =  collideRectRect(
        this.x,
        this.y,
        this.largura * precision,

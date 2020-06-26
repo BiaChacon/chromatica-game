@@ -2,8 +2,6 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   frameRate(40);
   
-  soundGame.loop();
-  
   game = new Game();
   homeScreen = new HomeScreen();
   
@@ -11,7 +9,8 @@ function setup() {
   
   scenes = {
     game,
-    homeScreen
+    homeScreen,
+    level2
   };
   
   buttonManager =  new ButtonManager('Start');

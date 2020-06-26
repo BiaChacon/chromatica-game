@@ -19,7 +19,8 @@ class HomeScreen {
     textSize(50);
     text('Adventures of', width/2, height/2.5);
     textSize(150);
-    text('Hipsta',  width/2, height/5*3);
+    text('Chromatica',  width/2, height/5*3);
+    fill('#FF1493');
   }
 
   _button(){

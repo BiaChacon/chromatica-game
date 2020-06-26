@@ -15,6 +15,7 @@ class ButtonManager {
   
   _changeScene(){
     this.button.remove();
+    soundGame.loop();
     sceneAtual = 'game';
   }
   

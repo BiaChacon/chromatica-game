@@ -5,7 +5,7 @@ class Punctuation {
   
   show() {
     textAlign(RIGHT);
-    fill('#fff');
+    fill('#FF1493');
     textSize(50);
     text(parseInt(this.points), width-30, 50);
   }

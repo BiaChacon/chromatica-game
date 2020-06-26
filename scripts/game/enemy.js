@@ -1,17 +1,16 @@
 class Enemy extends Animation {
-  constructor(matriz, image, x, variationY, largura, altura, larguraSprite, alturaSpirit, velocity, delay){
+  constructor(matriz, image, x, variationY, largura, altura, larguraSprite, alturaSpirit, velocity){
     super(matriz, image, x, variationY, largura, altura, larguraSprite, alturaSpirit);
     
     this.velocity = velocity;
-    this.delay = delay;
-    this.x = width + this.delay;
+    this.x = width;
   }
   
   move(){
     this.x = this.x - this.velocity;
-    
-    if(this.x < -this.largura - this.delay){
-      this.x = width;
-    }
+  }
+  
+  popsUp(){
+    this.x = width;
   }
 }

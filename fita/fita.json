@@ -1,0 +1,48 @@
+{
+  "settings": {
+    "lifeMax":3,
+    "lifeInitial": 3
+  },
+  "mapa1": [
+    {
+      "enemy": 0,
+      "velocity": 10
+    },
+    {
+      "enemy": 1,
+      "velocity": 20
+    },
+     {
+      "enemy": 2,
+      "velocity": 15
+    }
+  ],
+  "mapa2": [
+    {
+      "enemy": 0,
+      "velocity": 20
+    },
+    {
+      "enemy": 1,
+      "velocity": 30
+    },
+     {
+      "enemy": 2,
+      "velocity": 25
+    }
+  ],
+    "mapa3": [
+    {
+      "enemy": 0,
+      "velocity": 30
+    },
+    {
+      "enemy": 1,
+      "velocity": 40
+    },
+     {
+      "enemy": 2,
+      "velocity": 30
+    }
+  ]
+}
